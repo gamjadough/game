@@ -1,6 +1,6 @@
 [
   { "id": "wakppuball-battle", "name": "왁뿌볼 아레나", "description": "왁뿌볼과 함께 아레나에서 즐기는 전투 액션 게임입니다.", "genre": "액션", "thumbnail": "/assets/battle.svg", "status": "ready", "type": "web", "addedAt": "2026-10-13", "launchUrl": "https://gamjadough.github.io/Wax-Ball/arena/", "localProject": null, "downloadUrl": null },
   { "id": "wakppumon-world", "name": "왁뿌몬월드", "description": "왁뿌몬의 세계를 만나보세요. 브라우저에서 즐기는 웹 게임입니다.", "genre": "캐주얼", "thumbnail": "/assets/world.svg", "status": "ready", "type": "web", "addedAt": "2026-10-13", "launchUrl": "https://gamjadough.github.io/wakppu-pet-world/#", "localProject": null, "downloadUrl": null },
-  { "id": "wakppuball", "name": "왁뿌볼 뿌수기야", "description": "왁뿌볼을 뿌수며 즐기는 캐주얼 게임입니다. 가볍게 시작해 보세요.", "genre": "캐주얼", "thumbnail": "/assets/wakppuball.svg", "status": "ready", "type": "web", "addedAt": "2026-10-13", "launchUrl": "https://gamjadough.github.io/Wax-Ball/wakppuball/", "localProject": null, "downloadUrl": null },
+  { "id": "wakppuball", "name": "왁뿌볼 뿌수기", "description": "왁뿌볼을 뿌수며 즐기는 캐주얼 게임입니다. 가볍게 시작해 보세요.", "genre": "캐주얼", "thumbnail": "/assets/wakppuball.svg", "status": "ready", "type": "web", "addedAt": "2026-10-13", "launchUrl": "https://gamjadough.github.io/Wax-Ball/wakppuball/", "localProject": null, "downloadUrl": null },
   { "id": "fluff", "name": "털뭉치", "description": "바탕화면에 찾아온 작고 포근한 친구. 나만의 공간에서 함께하는 데스크톱 펫 프로젝트입니다.", "genre": "실험작", "thumbnail": "/assets/fluff.svg", "status": "in-development", "type": "desktop", "addedAt": "2026-10-12", "launchUrl": null, "localProject": null, "downloadUrl": null }
 ]

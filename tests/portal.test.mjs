@@ -18,7 +18,7 @@ test('catalog connects the three supplied games and preserves the desktop projec
   assert.deepEqual(games.slice(0, 3).map(game => [game.name, game.playableUrl]), [
     ['왁뿌볼 아레나', 'https://gamjadough.github.io/Wax-Ball/arena/'],
     ['왁뿌몬월드', 'https://gamjadough.github.io/wakppu-pet-world/#'],
-    ['왁뿌볼 뿌수기야', 'https://gamjadough.github.io/Wax-Ball/wakppuball/'],
+    ['왁뿌볼 뿌수기', 'https://gamjadough.github.io/Wax-Ball/wakppuball/'],
   ]);
   assert.equal(games[3].playableUrl, null);
   assert.equal(games[3].id, 'fluff');
