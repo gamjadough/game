@@ -1,0 +1,8 @@
+[
+  { "id": "local-test", "type": "web", "status": "ready", "localProject": { "directory": "game", "entry": "index.html" } },
+  { "id": "missing-test", "type": "web", "status": "ready", "localProject": { "directory": "missing", "entry": "index.html" } },
+  { "id": "escape-test", "type": "web", "status": "ready", "localProject": { "directory": "game", "entry": "../data/games.json" } },
+  { "id": "url-test", "type": "web", "status": "ready", "launchUrl": "https://example.com/game" },
+  { "id": "desktop-test", "type": "desktop", "status": "ready", "downloadUrl": "https://example.com/download" },
+  { "id": "draft-test", "type": "web", "status": "in-development", "localProject": { "directory": "game", "entry": "index.html" } }
+]

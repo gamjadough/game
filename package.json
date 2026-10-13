@@ -1,0 +1,8 @@
+{
+  "name": "gamza-games",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node server.mjs", "build": "node scripts/build-pages.mjs", "test": "node --test tests/portal.test.mjs tests/pages.test.mjs" },
+  "engines": { "node": ">=20" }
+}
