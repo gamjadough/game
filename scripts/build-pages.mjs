@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { cp, mkdir, readFile, writeFile, rm, stat } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.resolve(root, 'dist');
 if (path.dirname(output) !== path.resolve(root) || path.basename(output) !== 'dist') throw new Error('Unexpected build directory');
@@ -24,6 +25,12 @@ const games = await Promise.all(source.map(async game => {
 }));
 await writeFile(path.join(output, 'games.json'), JSON.stringify(games, null, 2) + '\n');
 const index = await readFile(path.join(output, 'index.html'), 'utf8');
-await writeFile(path.join(output, 'index.html'), index.replace('content="/api/games"', 'content="./games.json"'));
+const scriptNames = ['app.js', 'catalog.js', 'game-links.js'];
+const scripts = await Promise.all(scriptNames.map(name => readFile(path.join(output, name), 'utf8')));
+const revision = createHash('sha256').update(scripts.join('\n')).digest('hex').slice(0, 12);
+for (let i = 0; i < scriptNames.length; i++) {
+  await writeFile(path.join(output, scriptNames[i]), scripts[i].replace(/from '(\.\/[^']+\.js)'/g, `from '$1?v=${revision}'`));
+}
+await writeFile(path.join(output, 'index.html'), index.replace('content="/api/games"', 'content="./games.json"').replace('src="./app.js"', `src="./app.js?v=${revision}"`));
 await writeFile(path.join(output, '.nojekyll'), '');
 console.log(`GitHub Pages build ready: ${output}`);
