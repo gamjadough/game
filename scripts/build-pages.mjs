@@ -27,10 +27,14 @@ await writeFile(path.join(output, 'games.json'), JSON.stringify(games, null, 2) 
 const index = await readFile(path.join(output, 'index.html'), 'utf8');
 const scriptNames = ['app.js', 'catalog.js', 'game-links.js'];
 const scripts = await Promise.all(scriptNames.map(name => readFile(path.join(output, name), 'utf8')));
-const revision = createHash('sha256').update(scripts.join('\n')).digest('hex').slice(0, 12);
+const styles = await readFile(path.join(output, 'styles.css'), 'utf8');
+const revision = createHash('sha256').update(scripts.join('\n') + styles + JSON.stringify(games)).digest('hex').slice(0, 12);
 for (let i = 0; i < scriptNames.length; i++) {
   await writeFile(path.join(output, scriptNames[i]), scripts[i].replace(/from '(\.\/[^']+\.js)'/g, `from '$1?v=${revision}'`));
 }
-await writeFile(path.join(output, 'index.html'), index.replace('content="/api/games"', 'content="./games.json"').replace('src="./app.js"', `src="./app.js?v=${revision}"`));
+await writeFile(path.join(output, 'index.html'), index
+  .replace('content="/api/games"', `content="./games.json?v=${revision}"`)
+  .replace('src="./app.js"', `src="./app.js?v=${revision}"`)
+  .replace('href="./styles.css"', `href="./styles.css?v=${revision}"`));
 await writeFile(path.join(output, '.nojekyll'), '');
 console.log(`GitHub Pages build ready: ${output}`);

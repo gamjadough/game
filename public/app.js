@@ -50,7 +50,7 @@ search.addEventListener('input', () => { query = search.value; filterGames(); })
 document.addEventListener('keydown', event => { if (event.key === '/' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName) && !search.disabled) { event.preventDefault(); search.focus(); } });
 window.addEventListener('hashchange', route);
 try {
-  const response = await fetch(document.querySelector('meta[name="games-catalog"]').content);
+  const response = await fetch(document.querySelector('meta[name="games-catalog"]').content, { cache: 'no-store' });
   if (!response.ok) throw new Error('catalog');
   games = await response.json();
   route();
