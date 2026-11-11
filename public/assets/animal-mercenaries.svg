@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+<rect width="640" height="400" fill="#202e2b"/>
+<circle cx="486" cy="86" r="40" fill="#ecdb9a"/>
+<g fill="#30463a"><path d="M0 300 80 70 165 300ZM110 300 212 35 314 300ZM300 300 399 60 494 300ZM440 300 558 20 676 300Z"/></g>
+<path d="M0 310Q160 260 320 310T640 295V400H0Z" fill="#526443"/>
+<path d="M0 365Q200 315 390 360T640 350V400H0Z" fill="#394e3b"/>
+<g shape-rendering="crispEdges">
+<path d="M219 179v-48l35 28h43l35-28v48l-12 63h-87Z" fill="#d7995f"/>
+<path d="m234 177 30 26-20 28-15-30Zm82 0-30 26 20 28 15-30Z" fill="#ffe5b0"/>
+<path d="M240 240h72v65h-72Z" fill="#6e9180"/>
+<path d="M249 306h20v21h-30v-12h10Zm34 0h20v9h10v12h-30Z" fill="#26332d"/>
+<path d="M253 191h8v10h-8Zm37 0h8v10h-8Z" fill="#30272a"/>
+<path d="m268 217 17 0-8 10Z" fill="#473339"/>
+<path d="M220 258h-18v-54h-9v-17h26v17h-9v54Z" fill="#b3c2ac"/>
+<path d="M304 257h43v44l-21 18-22-18Z" fill="#bcaa74"/>
+<path d="M312 267h27v29l-13 12-14-12Z" fill="#697d68"/>
+<path d="M381 219v-36l24 19h34l24-19v36l-9 46h-64Z" fill="#b6a086"/>
+<path d="M394 222h13v15h-13Zm43 0h13v15h-13Z" fill="#f5df9c"/>
+<path d="M398 225h6v9h-6Zm42 0h6v9h-6Z" fill="#2b302b"/>
+<path d="m416 241 12 0-6 13Z" fill="#c8a466"/>
+<path d="M391 265h64v47h-64Z" fill="#827664"/>
+<path d="M399 312h15v14h-23v-8h8Zm34 0h15v6h8v8h-23Z" fill="#26332d"/>
+</g>
+<g fill="#d1eb8c"><circle cx="133" cy="179" r="4"/><circle cx="178" cy="253" r="3"/><circle cx="361" cy="131" r="4"/><circle cx="501" cy="251" r="3"/><circle cx="544" cy="166" r="4"/></g>
+<text x="30" y="370" fill="#d4d8b1" font-family="system-ui,sans-serif" font-size="12" letter-spacing="3">ANIMAL MERCENARIES</text>
+</svg>

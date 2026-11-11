@@ -9,12 +9,12 @@ const server = createServer();
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const base = `http://127.0.0.1:${server.address().port}`;
 after(() => new Promise(resolve => server.close(resolve)));
-test('catalog connects the three supplied games and preserves the desktop project', async () => {
+test('catalog connects the supplied games and preserves the desktop project', async () => {
   const response = await fetch(`${base}/api/games`);
   assert.equal(response.status, 200);
   const games = await response.json();
-  assert.equal(games.length, 4);
-  assert.equal(new Set(games.map(game => game.id)).size, 4);
+  assert.equal(games.length, 5);
+  assert.equal(new Set(games.map(game => game.id)).size, 5);
   assert.deepEqual(games.slice(0, 3).map(game => [game.name, game.playableUrl]), [
     ['왁뿌볼 아레나', 'https://gamjadough.github.io/Wax-Ball/arena/'],
     ['왁뿌몬월드', 'https://gamjadough.github.io/wakppu-pet-world/#'],
@@ -22,6 +22,8 @@ test('catalog connects the three supplied games and preserves the desktop projec
   ]);
   assert.equal(games[3].playableUrl, null);
   assert.equal(games[3].id, 'fluff');
+  assert.equal(games[4].name, '동물 용병단 키우기');
+  assert.equal(games[4].playableUrl, 'https://gamjadough.github.io/animal-mercenaries-idle/');
   for (const game of games) {
     assert.equal(game.downloadUrl, null);
     assert.equal('localProject' in game, false);
@@ -63,7 +65,7 @@ test('real local entries mount independently while missing and escaping entries 
   } finally { await new Promise(resolve => fixtureServer.close(resolve)); }
 });
 test('search and categories combine across name, genre and description', () => {
-  assert.equal(filterCatalog(catalogData, '전체 게임', '').length, 4);
+  assert.equal(filterCatalog(catalogData, '전체 게임', '').length, 5);
   assert.equal(filterCatalog(catalogData, '전체 게임', '  왁뿌볼 ').length, 2);
   assert.equal(filterCatalog(catalogData, '액션', '왁뿌볼')[0].id, 'wakppuball-battle');
   assert.equal(filterCatalog(catalogData, '실험작', '바탕화면')[0].id, 'fluff');
