@@ -23,6 +23,7 @@ test('catalog connects the supplied games and preserves the desktop project', as
   assert.equal(games[3].playableUrl, null);
   assert.equal(games[3].id, 'fluff');
   assert.equal(games[4].name, '동물 용병단 키우기');
+  assert.equal(games[4].genre, '방치형 RPG');
   assert.equal(games[4].playableUrl, 'https://gamjadough.github.io/animal-mercenaries-idle/');
   for (const game of games) {
     assert.equal(game.downloadUrl, null);
@@ -82,4 +83,9 @@ test('recent games sort by date without changing original catalog order', () => 
   const data = ['2026-01-01','2026-04-01','2026-03-01','2026-02-01'].map((addedAt, id) => ({ addedAt, id }));
   assert.deepEqual(recentGames(data).map(game => game.id), [1,2,3]);
   assert.deepEqual(data.map(game => game.id), [0,1,2,3]);
+});
+
+test('idle RPG category includes the animal game and excludes it from action', () => {
+  assert.deepEqual(filterCatalog(catalogData, '방치형 RPG', '').map(game => game.id), ['animal-mercenaries-idle']);
+  assert.equal(filterCatalog(catalogData, '액션', '동물').length, 0);
 });

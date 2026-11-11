@@ -54,9 +54,9 @@
   {
     "id": "animal-mercenaries-idle",
     "name": "동물 용병단 키우기",
-    "description": "동물 동료들과 용병단을 꾸리고 반딧불 숲으로 출격하세요. 자동 사냥과 팀 배치를 즐기는 방치형 게임입니다.",
-    "genre": "액션",
-    "thumbnail": "/assets/animal-mercenaries.svg",
+    "description": "동물 동료들과 용병단을 꾸리고 반딧불 숲으로 출격하세요. 자동 사냥과 팀 배치를 즐기는 방치형 RPG입니다.",
+    "genre": "방치형 RPG",
+    "thumbnail": "/assets/animal-mercenaries-pixel.svg",
     "status": "ready",
     "type": "web",
     "addedAt": "2026-11-11",
